@@ -33,7 +33,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         connectEmulators()
         #endif
 
-        let repo = FirebaseAuthService(auth: Auth.auth(), db: Firestore.firestore())
+        let repo = FirebaseAuthService(auth: Auth.auth(), database: Firestore.firestore())
         Env.current = AppEnvironment(authRepo: repo)
 
         return true
@@ -56,7 +56,7 @@ private func connectEmulators() {
 
     // Build DI AFTER emulator settings applied
     Env.current = AppEnvironment(
-        authRepo: FirebaseAuthService(auth: Auth.auth(), db: Firestore.firestore())
+        authRepo: FirebaseAuthService(auth: Auth.auth(), database: Firestore.firestore())
     )
 
     print("Firebase Emulators configured successfully")
