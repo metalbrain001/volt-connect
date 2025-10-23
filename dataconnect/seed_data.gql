@@ -1,0 +1,69 @@
+mutation CreateSeedData @transaction @auth(level: NO_ACCESS) {
+  user_insertMany(data: [
+    {
+      id: "550e8400-e29b-41d4-a716-446655440000",
+      firstName: "demouser",
+      lastName: "one",
+      email: "demouser1@example.com",
+      passwordHash: "plaintextpassword",
+      createdAt: "2024-01-01T00:00:00Z"
+    },
+    {
+      id: "550e8400-e29b-41d4-a716-446655440001",
+      firstName: "demouser",
+      lastName: "two",
+      email: "demouser2@example.com",
+      passwordHash: "plaintextpassword",
+      createdAt: "2024-01-01T00:00:00Z"
+    }
+  ])
+  event_insertMany(data: [
+    {
+      id: "650e8400-e29b-41d4-a716-446655440000",
+      name: "Demo Event 1",
+      description: "A demo event",
+      eventType: "Demo",
+      durationMinutes: 60,
+      eventDateTime: "2024-02-15T10:00:00Z",
+      createdAt: "2024-01-15T00:00:00Z"
+    },
+    {
+      id: "650e8400-e29b-41d4-a716-446655440001",
+      name: "Demo Event 2",
+      description: "Another demo event",
+      eventType: "Demo",
+      durationMinutes: 90,
+      eventDateTime: "2024-03-01T14:00:00Z",
+      createdAt: "2024-02-01T00:00:00Z"
+    }
+  ])
+  participation_insertMany(data: [
+    {
+      userId: "550e8400-e29b-41d4-a716-446655440000",
+      eventId: "650e8400-e29b-41d4-a716-446655440000",
+      registrationDate: "2024-01-20T00:00:00Z"
+    },
+    {
+      userId: "550e8400-e29b-41d4-a716-446655440001",
+      eventId: "650e8400-e29b-41d4-a716-446655440001",
+      registrationDate: "2024-02-05T00:00:00Z"
+    }
+  ])
+  match_insertMany(data: [
+    {
+      user1Id: "550e8400-e29b-41d4-a716-446655440000",
+      user2Id: "550e8400-e29b-41d4-a716-446655440001",
+      eventId: "650e8400-e29b-41d4-a716-446655440000",
+      matchDate: "2024-02-15T11:00:00Z"
+    }
+  ])
+  message_insertMany(data: [
+    {
+      senderId: "550e8400-e29b-41d4-a716-446655440000",
+      receiverId: "550e8400-e29b-41d4-a716-446655440001",
+      matchId: "750e8400-e29b-41d4-a716-446655440000",
+      content: "Hello from user 1 to user 2",
+      sentAt: "2024-02-15T11:05:00Z"
+    }
+  ])
+}

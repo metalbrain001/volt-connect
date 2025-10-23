@@ -1,0 +1,126 @@
+################################################################################
+# VoltConnect – Root Git Ignore
+# Covers: Xcode, SwiftPM, Firebase Emulators, Cloud Functions, and macOS clutter
+################################################################################
+
+# ─────────────────────────────
+# macOS System
+# ─────────────────────────────
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ─────────────────────────────
+# Xcode / iOS
+# ─────────────────────────────
+build/
+DerivedData/
+*.xcuserstate
+*.xccheckout
+*.xcscmblueprint
+*.xcworkspace/xcuserdata/
+xcuserdata/
+*.moved-aside
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# ─────────────────────────────
+# Swift Package Manager
+# ─────────────────────────────
+.build/
+Packages/
+Package.pins
+Package.resolved
+.swiftpm/
+.swiftpm/xcode/
+.swiftpm/config/
+.swiftpm/cache/
+
+# ─────────────────────────────
+# Firebase / iOS App Secrets
+# ─────────────────────────────
+VoltConnect/Config*/GoogleService-Info.plist
+VoltConnect/Configs/**/GoogleService-Info.plist
+VoltConnect/**/GoogleService-Info.plist
+VoltConnect/**/Info.plist
+
+# Emulator state and logs
+firebase-debug.log
+firestore-debug.log
+database-debug.log
+*.cache
+*.local
+.emulatorui-debug.log
+firebase-emulator-log.txt
+
+# ─────────────────────────────
+# Node / Cloud Functions
+# ─────────────────────────────
+functions/node_modules/
+functions/lib/
+functions/.firebase/
+functions/.env
+functions/.eslintrc.js
+functions/.output/
+functions/*.log
+
+# ─────────────────────────────
+# Firebase Hosting / Rules / Config Templates
+# ─────────────────────────────
+public/*.cache
+public/.firebase/
+remoteconfig.template.json
+
+# ─────────────────────────────
+# Swift / App Specific
+# ─────────────────────────────
+VoltConnect/.build/
+VoltConnect/.swiftpm/
+VoltConnect/.swiftpm/xcode/
+VoltConnect/.swiftpm/config/
+VoltConnect/.swiftpm/cache/
+VoltConnect/DerivedData/
+VoltConnect/build/
+
+# ─────────────────────────────
+# Editor / IDE files
+# ─────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*.iml
+
+# ─────────────────────────────
+# Env / Secrets
+# ─────────────────────────────
+.env
+.env.*
+.secret
+*.key
+*.pem
+*.p12
+*.mobileprovision
+*.crt
+*.cer
+
+# ─────────────────────────────
+# Misc
+# ─────────────────────────────
+*.log
+*.tmp
+*.bak
+*.orig
+*.lock
+*.out

@@ -1,0 +1,7 @@
+//
+//  Settings.xcconfig
+//  VoltConnect
+//
+//  Created by Babatunde Kalejaiye on 22/10/2025.
+//
+SWIFT_STRICT_CONCURRENCY = complete;

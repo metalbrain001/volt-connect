@@ -1,0 +1,6 @@
+node_modules/
+*.local
+lib/
+.firebase/
+.env
+*.log

@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Git pre-commit hook for VoltConnect
+set -euo pipefail
+
+# Run the orchestrator
+bash Scripts/tools/pre_commit.sh

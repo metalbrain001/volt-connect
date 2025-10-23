@@ -1,0 +1,13 @@
+//
+//  Base.xcconfig
+//  VoltConnect
+//
+//  Created by Babatunde Kalejaiye on 21/10/2025.
+//
+PRODUCT_NAME = VoltConnect
+PRODUCT_BUNDLE_IDENTIFIER = net.metalbrain.volt
+IPHONEOS_DEPLOYMENT_TARGET = 16.0
+SWIFT_VERSION = 6.0
+ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor
+MARKETING_VERSION = 0.1.0
+CURRENT_PROJECT_VERSION = 1

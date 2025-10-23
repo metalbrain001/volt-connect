@@ -1,0 +1,29 @@
+mutation CreateUser($email: String!, $firstName: String!, $lastName: String!, $passwordHash: String!) @auth(level: PUBLIC, insecureReason: "This operation is safe to expose to the public") {
+  user_insert(data: {email: $email, firstName: $firstName, lastName: $lastName, passwordHash: $passwordHash, createdAt_expr: "request.time"})
+}
+
+query GetUser($id: UUID!) @auth(level: USER) {
+  user(id: $id) {
+    id
+    firstName
+    lastName
+    email
+    bio
+    profilePictureUrl
+  }
+}
+
+mutation UpdateUserProfile($id: UUID!, $bio: String, $profilePictureUrl: String) @auth(level: USER) {
+  user_update(id: $id, data: {bio: $bio, profilePictureUrl: $profilePictureUrl})
+}
+
+query ListEvents @auth(level: PUBLIC, insecureReason: "This operation is safe to expose to the public") {
+  events {
+    id
+    name
+    description
+    eventDateTime
+    address
+    eventType
+  }
+}

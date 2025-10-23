@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+set -euo pipefail
+ROOT="$(git rev-parse --show-toplevel)"
+pushd "$ROOT" >/dev/null
+
+# Resolve packages
+xcodebuild -resolvePackageDependencies -project VoltConnect.xcodeproj -scheme VoltConnect >/dev/null
+
+# Build & Test on a generic sim destination
+DEST="generic/platform=iOS Simulator"
+xcodebuild -project VoltConnect.xcodeproj -scheme VoltConnect -configuration Debug -destination "$DEST" -quiet build
+
+if xcodebuild -list -project VoltConnect.xcodeproj | grep -q "VoltConnectTests"; then
+  xcodebuild -project VoltConnect.xcodeproj -scheme VoltConnect -configuration Debug -destination "$DEST" -quiet test
+else
+  echo "ℹ️  No test target; skipping tests."
+fi
+
+echo "✅ Pre-push build/test passed."

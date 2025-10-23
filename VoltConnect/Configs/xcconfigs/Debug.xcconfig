@@ -1,0 +1,11 @@
+//
+//  Debug.xcconfig
+//  VoltConnect
+//
+//  Created by Babatunde Kalejaiye on 21/10/2025.
+//
+#include "Base.xcconfig"
+SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG
+FIREBASE_APP_ENV = Debug
+OTHER_SWIFT_FLAGS = $(inherited) -D USE_FIREBASE_EMULATORS
+

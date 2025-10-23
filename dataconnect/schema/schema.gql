@@ -1,0 +1,50 @@
+type User @table {
+  firstName: String!
+  lastName: String!
+  email: String!
+  passwordHash: String!
+  createdAt: Timestamp!
+  professionalTitle: String
+  company: String
+  industry: String
+  bio: String
+  profilePictureUrl: String
+  location: String
+  interests: [String]
+}
+
+type Event @table {
+  name: String!
+  eventDateTime: Timestamp!
+  durationMinutes: Int!
+  eventType: String!
+  createdAt: Timestamp!
+  description: String
+  maxParticipants: Int
+  virtualMeetingLink: String
+  address: String
+}
+
+type Participation @table(key: ["user", "event"]) {
+  user: User!
+  event: Event!
+  registrationDate: Timestamp!
+  attendanceStatus: String
+}
+
+type Match @table {
+  user1: User!
+  user2: User!
+  event: Event!
+  matchDate: Timestamp!
+  status: String
+}
+
+type Message @table {
+  sender: User!
+  receiver: User!
+  match: Match!
+  content: String!
+  sentAt: Timestamp!
+  readAt: Timestamp
+}
